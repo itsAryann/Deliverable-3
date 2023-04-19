@@ -7,14 +7,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static boolean equals(cards[] arr,cards[] ar, String target){
+    public static boolean equal1(cards[] arr,cards[] ar, String target){
          for (cards s : arr) {
             if (s.name().equals(target)) {
                 for(cards x : ar){
                 if(x.name().equals(target)){
                     return true;
-                }
-                }
+                }}
                 return false;
             }
         }
@@ -41,7 +40,7 @@ public class Main {
         cards[] user1cards = new cards[4];
         cards[] user2cards = new cards[4];
 
-        while (keepPlaying) {
+         while (keepPlaying) {
             System.out.println("Starting round " + (numRounds + 1));
             System.out.println("Do you want to generate the Face-Up card? (yes/no)");
             String mainCard = k.next();
@@ -71,18 +70,19 @@ public class Main {
             } else {
                 break;
             }
-            String faceUpCard = new DisplayedCard().toString();
-            String winner;
-          //  System.out.println("Enter the face-up card you want to check:");
-          //  String faceUp = faceUpCard;
             
-            if(equals(user1cards, user2cards, faceUpCard)){
-                winner = "Tie"; 
-            } else if (contains(user2cards, faceUpCard)) {
+            //String faceUpCard = new DisplayedCard().toString();
+            String winner;
+           System.out.println("Enter the Winner Face-up card:");
+           String faceUp = k.next();
+            
+            if(equal1(user1cards, user2cards, faceUp)){
+                winner = "No one because it is a tie"; 
+            } else if (contains(user2cards, faceUp)) {
                 winner = "User 2";
                 user2Wins++;
                 user2RoundsWon++;
-            } else if (contains(user1cards, faceUpCard)) {
+            } else if (contains(user1cards, faceUp)) {
                 winner = "User 1";
                 user1Wins++;
                 user1RoundsWon++;
