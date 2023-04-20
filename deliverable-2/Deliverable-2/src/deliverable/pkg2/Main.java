@@ -106,10 +106,4 @@ public class Main {
         System.out.println("User 1 won " + user1RoundsWon + " rounds");
     }
 
-    public static String getCard() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter card name:");
-        String cardName = scanner.nextLine();
-        return cardName;
-    }
 }
